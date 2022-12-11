@@ -8,7 +8,6 @@ const {API_KEY} = process.env
 const KEY = `?apiKey=${API_KEY}`;
 const router = Router();
 const {dietas} = require("../dietas");
-const { NUMBER } = require('sequelize');
 //repaso m2 cohorte 22a diego rodriguez
 //********Si muevo api key mas arriba me la deja en default ********
 // Configurar los routers
