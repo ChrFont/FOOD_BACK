@@ -87,7 +87,7 @@ __IMPORTANTE__: Para las funcionalidades de filtrado y ordenamiento NO pueden ut
 
 - GET <https://api.spoonacular.com/recipes/complexSearch>
   - Para obtener mayor información sobre las recetas, como por ejemplo el tipo de dieta deben agregar el flag `&addRecipeInformation=true` a este endpoint
-  - Para los tipos de dieta deben tener en cuenta las propiedades vegetarian, vegan, glutenFree por un lado y también analizar las que se incluyan dentro de la propiedad `diets`
+  - Para los tipos de dieta deben tener en cuenta las propiedades rian, vegan, glutenFree por un lado y también analizar las que se incluyan dentro de la propiedad `diets`
 - GET <https://api.spoonacular.com/recipes/{id}/information>
 
 ### Requerimientos mínimos
@@ -118,7 +118,7 @@ __Ruta principal__: debe contener
 - [ ] Área donde se verá el listado de recetas. Deberá mostrar su:
   - Imagen
   - Nombre
-  - Tipo de dieta (vegetariano, vegano, apto celíaco, etc)
+  - Tipo de dieta (riano, vegano, apto celíaco, etc)
 - [ ] Botones/Opciones para filtrar por por tipo de dieta
 - [ ] Botones/Opciones para ordenar tanto ascendentemente como descendentemente las recetas por orden alfabético y por health score (nivel de comida saludable).
 - [ ] Paginado para ir buscando y mostrando las siguientes recetas, 9 recetas por pagina, mostrando las primeros 9 en la primer pagina.
@@ -158,7 +158,7 @@ El modelo de la base de datos deberá tener las siguientes entidades (Aquellas p
   - ID
   - Nombre
 
-La relación entre ambas entidades debe ser de muchos a muchos ya que una receta puede ser parte de varios tipos de dieta en simultaneo y, a su vez, un tipo de dieta puede contener múltiples recetas distintas. Un ejemplo tomado de la API sería el `Strawberry Mango Green Tea Limeade` que es vegetariano, vegano y apto para celíacos, todo al mismo tiempo. Pero a su vez existen otras recetas para vegetarianos.
+La relación entre ambas entidades debe ser de muchos a muchos ya que una receta puede ser parte de varios tipos de dieta en simultaneo y, a su vez, un tipo de dieta puede contener múltiples recetas distintas. Un ejemplo tomado de la API sería el `Strawberry Mango Green Tea Limeade` que es riano, vegano y apto para celíacos, todo al mismo tiempo. Pero a su vez existen otras recetas para rianos.
 
 __IMPORTANTE__: Pensar como modelar los IDs de las recetas en la base de datos. Existen distintas formas correctas de hacerlo pero tener en cuenta que cuando hagamos click en alguna receta, esta puede provenir de la API o de la Base de Datos por lo que cuando muestre su detalle no debería haber ambigüedad en cual se debería mostrar. Por ejemplo si en la API la receta `Strawberry Mango Green Tea Limeade` tiene id = 1 y en nuestra base de datos creamos una nueva receta `Medialunas de Manteca` con id = 1, ver la forma de diferenciarlas cuando querramos acceder al detalle de la misma.
 
