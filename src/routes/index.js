@@ -1,6 +1,4 @@
 const { Router } = require('express');
-// Importar todos los routers;
-// Ejemplo: const authRouter = require('./auth.js');
 const PARAMETERS = "&addRecipeInformation=true&number=100"
 const axios = require('axios')
 const {Recipe,Diet} = require('../db');
@@ -8,10 +6,7 @@ const {API_KEY} = process.env
 const KEY = `?apiKey=${API_KEY}`;
 const router = Router();
 const {dietas} = require("../dietas");
-//repaso m2 cohorte 22a diego rodriguez
-//********Si muevo api key mas arriba me la deja en default ********
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
+
 const getApiInfo = async () =>{
     const apiUrl = await axios.get("https://api.spoonacular.com/recipes/complexSearch" + KEY + PARAMETERS)
     const apiInfo = apiUrl.data.results.map(e => {
@@ -71,11 +66,9 @@ const getAllRecipes = async () => {
 router.get('/recipes', async (req,res) => {
     const name = req.query.name
     let allRecipes = await getAllRecipes()
-    console.log(name);
     try {
         if(name){
             let recipesFilter = ""
-            console.log(name);
             if(Number(name)){
                 console.log("healtscore");
                 recipesFilter = await allRecipes.filter(e => e.healthScore == name)
