@@ -39,8 +39,11 @@ API_KEY= [api key de spoonacular] // https://spoonacular.com/food-api
 Crear archivo .env en la raiz del proyecto con la siguiente informacion:
 
 ```js
-REACT_APP_NEXT_PUBLIC_QUERIES=[el puerto en la api en este caso, http://localhost:4000 ]
+REACT_APP_NEXT_PUBLIC_QUERIES=[el puerto en la api en este caso, ej: http://localhost:4000 ]
 ```
+## Iniciar proyecto
+
+`npm run start`
 
 ## Contacto
 
